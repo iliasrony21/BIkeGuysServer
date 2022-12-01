@@ -7,11 +7,11 @@ const port = process.env.PORT || 5000
 
 app.use(cors())
 app.use(express.json())
-//user:Bikedb
-//password:Okvn25zytnKA6AUh
+//user:
+//password:
 
 const uri =
-  'mongodb+srv://Bikedb:Okvn25zytnKA6AUh@cluster0.efb8elf.mongodb.net/?retryWrites=true&w=majority'
+  'mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.efb8elf.mongodb.net/?retryWrites=true&w=majority'
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
